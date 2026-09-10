@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mymcapitalhumano.com/sitemap.xml
