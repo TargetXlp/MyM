@@ -698,22 +698,30 @@ section[id] { scroll-margin-top:120px; }
 }
 .mv-text { color: #4c5b66; line-height: 1.85; font-size: .97rem; margin: 0; }
 
-.mv-values { list-style: none; padding: 0; margin: 1.5rem 0 0; border-top: 1px solid #e4e9ed; columns: 2; column-gap: 3rem; }
-.mv-values li {
-  display: grid; grid-template-columns: 150px 1fr; gap: 1rem;
-  padding: .95rem 0; border-bottom: 1px solid #eef2f4;
-  align-items: baseline; break-inside: avoid;
+.mv-values-title { color: var(--navy); font-size: 1.45rem; font-weight: 700; margin: 1.1rem 0 0; }
+.mv-value-card {
+  height: 100%; overflow: hidden; background: #fff;
+  border: 1px solid #e4e9ed; border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(29,56,76,.06);
+  transition: transform .3s ease, box-shadow .3s ease;
 }
-.mv-values strong { font-family: 'Montserrat', sans-serif; font-size: .92rem; font-weight: 700; color: var(--navy); }
-.mv-values span { color: #5b6b76; font-size: .92rem; line-height: 1.7; }
+.mv-value-card:hover { transform: translateY(-6px); box-shadow: 0 14px 32px rgba(29,56,76,.13); }
+.mv-value-image { height: 150px; position: relative; overflow: hidden; background: var(--navy); }
+.mv-value-image img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .4s ease; }
+.mv-value-card:hover .mv-value-image img { transform: scale(1.06); }
+.mv-value-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(29,56,76,.68)); }
+.mv-value-image span { position: absolute; z-index: 1; right: 1rem; bottom: .7rem; color: #fff; font: 700 .75rem 'Montserrat', sans-serif; letter-spacing: 1px; }
+.mv-value-body { padding: 1.25rem 1.25rem 1.35rem; }
+.mv-value-icon { display: block; color: var(--orange); font-size: 1.7rem; margin-bottom: .65rem; }
+.mv-value-body h4 { color: var(--navy); font-size: 1.02rem; font-weight: 700; margin: 0 0 .55rem; text-transform: uppercase; }
+.mv-value-body p { color: #5b6b76; font-size: .91rem; line-height: 1.65; margin: 0; }
 
 @media(max-width:768px) {
   .mv-section { padding: 56px 0; }
   .mv-title { font-size: 1.6rem; }
   .mv-col + .mv-col { border-left: none; border-top: 1px solid #e4e9ed; padding-left: 0; }
   .mv-col { padding-right: 0; }
-  .mv-values { columns: 1; }
-  .mv-values li { grid-template-columns: 1fr; gap: .15rem; }
+  .mv-values-title { font-size: 1.25rem; }
   .mv-panel-col + .mv-panel-col { border-left: none; border-top: 1px solid rgba(255,255,255,.12); }
   .mv-panel-col { padding: 1.8rem; }
 }
